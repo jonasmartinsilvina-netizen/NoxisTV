@@ -1,0 +1,49 @@
+name: 🐛 Bug Report / Reportar Bug
+description: Relate um problema no NoxisTV / Report an issue in NoxisTV
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Nunca cole links privados de listas IPTV, senhas ou credenciais Xtream aqui!**  
+        ⚠️ **Never paste private IPTV playlist URLs, passwords, or Xtream credentials here!**
+
+  - type: input
+    id: app_version
+    attributes:
+      label: Versão do NoxisTV / App Version
+      placeholder: "ex: v1.3.0"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Aparelho e versão do Android / Device & Android Version
+      placeholder: "ex: Samsung Galaxy A54 — Android 14"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área afetada / Affected Area
+      options:
+        - Player (Media3 / Miniplayer / PiP / Legendas)
+        - Importação M3U / M3U8
+        - Importação Xtream Codes API
+        - EPG (XMLTV / .xml.gz)
+        - Catálogo / Busca FTS5 / Controle Parental
+        - Backup JSON / Configurações
+        - Outro / Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do problema e passos para reproduzir / Description & Steps to Reproduce
+      placeholder: Descreva o que aconteceu e o que você esperava que acontecesse...
+    validations:
+      required: true
