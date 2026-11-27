@@ -5,7 +5,15 @@ Todas as novidades notáveis do **NoxisTV** para Android são documentadas aqui.
 
 ---
 
-## [v1.3.0] — Dark Cinema, Miniplayer/PiP & EPG Leve XMLTV *(Em preparação / Upcoming Release)*
+## [v1.3.0] — 2026-11-27 — Dark Cinema, Miniplayer/PiP, EPG Leve & Smart Channel
+
+### ⚡ Smart Channel, Auto Failover & Resiliência
+- **Smart Channel (Agrupamento de Variantes):** Agrupa visualmente variantes do mesmo canal (`FHD`, `HD`, `4K`, `H265`, `SD`, `ALT`) com badge discreto (`FHD • 3 fontes`), seletor rápido no player e memória da última qualidade escolhida.
+- **Auto Source Failover:** Em caso de queda definitiva do sinal atual, alterna automaticamente para a próxima fonte do mesmo canal sem fechar o player e com proteção contra loop infinito.
+- **Detecção Automática `get.php` (M3U → Xtream):** Detecta URLs Xtream coladas na aba M3U e oferece conexão via API Xtream com 1 toque.
+- **Botão "Recarregar"** nos controles do player para reconexão limpa mantendo a posição em VOD.
+- **Tela de Erro Acionável:** Causa provável clara (`HTTP 403/401/404/5xx`, `Timeout`, `Codec`) com ações diretas (**Tentar novamente**, **Trocar fonte** e **Trocar User-Agent** sem sair do player).
+- **Resumo de Alterações ao Atualizar Lista:** Exibe o diff real antes/depois (ex.: `+12 canais, +38 filmes, +4 séries` ou `nenhuma alteração`).
 
 ### 📺 EPG Leve XMLTV (Streaming O(1))
 - Suporte nativo a guias **XMLTV `.xml` e `.xml.gz`** em streaming puro (compatível com dispositivos de baixa RAM).

@@ -77,17 +77,21 @@ Diferente de players IPTV tradicionais que travam, fecham sozinhos (*OutOfMemory
 ### ✨ Recursos Principais
 
 #### 🎬 Player Profissional (Media3 / ExoPlayer)
+- **Smart Channel + Auto Source Failover:** Agrupa automaticamente variantes do mesmo canal (`FHD`, `HD`, `4K`, `H265`, `SD`, `ALT`) em uma única entrada com badge de fontes (`FHD • 3 fontes`), memoriza sua qualidade favorita e **alterna automaticamente para a próxima fonte em caso de queda** sem fechar o vídeo e sem loop infinito.
 - **Carregamento Cinemático:** Transição suave com arte/logo, status de conexão em tempo real e *fade-out* instantâneo no primeiro quadro.
 - **Miniplayer Flutuante 16:9 + PiP Nativo do Android:** Minimize o vídeo sem interromper o áudio/imagem enquanto navega livremente por Ao Vivo, Filmes, Séries, Home e Busca — ou continue assistindo em **Picture-in-Picture (PiP)** fora do app.
 - **Zapping Ultrarrápido (Ao Vivo):**
   - **Gaveta Lateral de Canais** sobre o vídeo (com título do programa atual e barra de progresso EPG).
   - **Botão "Canal Anterior"** com 1 toque para alternar instantaneamente entre os 2 últimos canais assistidos.
+  - **Seletor Rápido de Qualidade/Fonte** direto nos controles do player.
 - **Gaveta de Episódios e Temporadas (Séries):** Troque de temporada e episódio direto dentro do player + botão inteligente **"Próximo Episódio"** nos últimos 30 segundos.
-- **Controles Avançados:**
+- **Resiliência Total no Player:**
+  - **Botão "Recarregar"** nos controles para forçar reconexão limpa mantendo a posição em VOD ou reconectando ao vivo.
+  - **Tela de Erro Acionável:** Causa clara em português (`HTTP 403`, `HTTP 404`, `Sem conexão / Tempo esgotado`, `Codec não suportado`) com botões diretos para **Tentar novamente**, **Trocar fonte** e **Trocar User-Agent** (em erros 403/401, sem sair do vídeo).
   - **Velocidade de reprodução VOD/Séries:** `0.5x`, `0.75x`, `1.0x`, `1.25x`, `1.5x`, `2.0x`.
-  - **Legendas Personalizáveis:** Escolha de faixas de áudio e legendas, tamanho (`Pequeno`, `Médio`, `Grande`, `Extra Grande`) e fundo (`Sem fundo`, `Sombra`, `Caixa semi-transparente`).
+  - **Legendas Personalizáveis:** Escolha de faixas de áudio e legendas, tamanho (`Pequeno`, `Médio`, `Grande`) e fundo (`Transparente`, `Semitransparente`, `Escuro`).
   - **Painel "Saúde da Reprodução":** Resolução real, FPS, codec de vídeo/áudio, bitrate e buffer em tempo real.
-  - **Cadeado Anti-Toque Acidental**, **Proporção de Tela** (`Ajustar`, `Preencher`, `Zoom`, `16:9`, `4:3`), **Sleep Timer (Temporizador)** e **Gestos** (brilho à esquerda, volume à direita, toque duplo `±10s`).
+  - **Cadeado Anti-Toque Acidental**, **Proporção de Tela** (`Ajustar`, `Preencher`, `Esticar`), **Sleep Timer (Temporizador)** e **Gestos** (brilho à esquerda, volume à direita, toque duplo `±10s`).
   - **Auto-Retry Silencioso** contra quedas momentâneas e **User-Agent Customizável** (suporte a `#EXTVLCOPT` por canal, preset global ou por playlist).
 
 #### 📺 EPG Leve em Streaming (XMLTV `.xml` e `.xml.gz`)
@@ -99,9 +103,10 @@ Diferente de players IPTV tradicionais que travam, fecham sozinhos (*OutOfMemory
 
 #### 📂 Gestão Avançada de Playlists & Catálogo
 - **Suporte Completo:** Listas **M3U / M3U8** (URL remota ou arquivo local do aparelho) e **Xtream Codes API** (com leitura de validade da conta e conexões ativas/máximas).
+- **Detecção Automática `get.php` (M3U → Xtream em 1 toque):** Ao colar um link M3U com `get.php`, o NoxisTV detecta automaticamente servidor, usuário e senha e oferece migrar para a API Xtream (mais rápida e completa) com 1 toque.
 - **Pré-Importação Inteligente (Escolha de Grupos):** Selecione exatamente quais categorias importar (Ao Vivo, Filmes, Séries) — grupos `+18` já vêm desmarcados por padrão.
 - **Múltiplas Playlists + Troca Rápida:** Alterne de lista com 1 toque direto no cabeçalho principal ou **Pause/Reative** qualquer lista temporariamente (ocultando do catálogo e da busca sem perder favoritos nem histórico).
-- **Atualização e Exclusão 100% Atômicas:** Se a internet cair durante uma atualização, seu catálogo antigo permanece intacto.
+- **Atualização Atômica com Resumo Real (Diff):** Ao atualizar uma lista, veja exatamente o que mudou (ex.: `"Lista atualizada: +12 canais, +38 filmes, +4 séries"`). Se a internet cair durante a atualização, seu catálogo antigo permanece 100% intacto.
 - **Limpeza Automática de Títulos (`TitleCleaner`):** Remove poluições comuns de listas IPTV (`[4K]`, `[FHD]`, `[PT-BR]`, `[L]`, `H.265`, `[DUB/LEG]`) na exibição, mantendo a busca FTS5 intacta.
 - **Fixar Grupos Favoritos no Topo** + **Filtro de Grupos A–Z** instantâneo.
 - **Controle de Progresso Completo:** Retomada automática inteligente (regra dos 92%), marcar manualmente como **Assistido / Não assistido** e **Remover de "Continuar Assistindo"** sem apagar favoritos.
@@ -128,15 +133,19 @@ While many IPTV players freeze, crash with *OutOfMemoryError*, or lag on large p
 ### ✨ Key Features
 
 #### 🎬 Media3 / ExoPlayer Dark Cinema Player
+- **Smart Channel + Auto Source Failover:** Automatically groups duplicate live channel variants (`FHD`, `HD`, `4K`, `H265`, `SD`, `ALT`) into one clean entry with a source count badge (`FHD • 3 fontes`), remembers your preferred quality per channel, and **automatically fails over to the next working source** without closing the player or looping.
 - **Cinematic Loading Overlay:** Smooth poster/logo pre-roll with real-time connection status and seamless fade-out on the first rendered video frame.
 - **Internal Floating 16:9 Miniplayer + Native Android PiP:** Minimize any live stream, movie, or episode into a draggable 16:9 miniplayer while browsing your catalog, or switch to system **Picture-in-Picture (PiP)** while using other apps.
 - **Instant Live TV Zapping:**
   - **Slide-Over Channels Drawer** with current program title & thin EPG progress bar.
   - **One-Tap "Previous Channel"** button to toggle effortlessly between your last two watched channels.
+  - **In-Player Quality/Source Picker** for multi-source Smart Channels.
 - **Series Episodes & Seasons Drawer:** Switch seasons and episodes directly inside the player + smart **"Next Episode"** prompt during the final 30 seconds.
-- **Pro Playback Controls:**
+- **Pro Playback Resilience:**
+  - **One-Tap Reload Button** to cleanly reconnect stalled streams while preserving VOD position or jumping to the live edge.
+  - **Actionable Error Screen:** Clear root cause (`HTTP 403`, `HTTP 404`, `Timeout`, `Unsupported Codec`) with instant **Retry**, **Switch Source**, and **Switch User-Agent** (auto-shown on 403/401 without leaving the player).
   - **VOD/Series Playback Speed:** `0.5x`, `0.75x`, `1.0x`, `1.25x`, `1.5x`, `2.0x`.
-  - **Customizable Subtitles:** Audio & subtitle track picker with configurable font size (`Small`, `Medium`, `Large`, `Extra Large`) and background (`None`, `Shadow`, `Semi-transparent Box`).
+  - **Customizable Subtitles:** Audio & subtitle track picker with configurable font size and background.
   - **Playback Health Panel:** Live video resolution, FPS, codecs, bitrate, and buffer metrics directly from ExoPlayer.
   - **Screen Touch Lock**, **Aspect Ratio Switcher**, **Sleep Timer**, **Swipe Gestures** (brightness/volume + double-tap `±10s`), **Silent Auto-Retry**, and **Custom User-Agent** (including per-channel `#EXTVLCOPT`).
 
@@ -149,9 +158,10 @@ While many IPTV players freeze, crash with *OutOfMemoryError*, or lag on large p
 
 #### 📂 Multi-Playlist & Catalog Engine
 - **Universal Format Support:** **M3U / M3U8** (remote URL or local file) and **Xtream Codes API** (with account expiration date & active/max connection display).
+- **Automatic `get.php` Detection (M3U → Xtream in 1 tap):** Pasting an Xtream `get.php` M3U link automatically extracts server, username, and password and offers switching to the faster Xtream API form in one tap.
 - **Pre-Import Group Picker:** Choose exactly which Live, VOD, and Series categories to import (adult `+18` groups are unchecked by default).
 - **Fast Playlist Switcher & Pause/Resume:** Switch active playlists in 1 tap from the top header or temporarily pause a playlist (hiding it from catalog & search while preserving favorites and watch history).
-- **100% Atomic Sync & Delete:** Network drops, malformed responses, or cancellations never corrupt your existing catalog.
+- **100% Atomic Sync & Real Diff Summary:** Manual updates show exact before/after changes (e.g., `+12 channels, +38 movies, +4 series`). Network drops never corrupt your existing catalog.
 - **Smart Title Cleaner & Pinned Groups:** Automatically cleans noisy IPTV tags (`[4K]`, `[FHD]`, `H.265`, `[DUB]`, etc.) for clean display, pins favorite groups to the top, and filters groups A–Z instantly.
 - **Full Watch Progress Control:** Automatic resume (92% completion rule), manual **Mark Watched / Unwatched**, and **Remove from Continue Watching** without losing favorites.
 
@@ -171,25 +181,30 @@ Todos os números abaixo foram medidos em testes automatizados reais com **Room 
 
 | Cenário / Benchmark Scenario | Resultado Real / Measured Result | Destaque / Highlight |
 | :--- | :--- | :--- |
-| **Home Completa em 200.000+ itens** *(Full Home Load @ 200k+ items)* | **19,3 ms** *(média / avg)* • **24,0 ms** *(máx)* | Carregamento paralelo + índices compostos Room |
-| **Busca Instantânea FTS5** *(50 queries @ 100k+ items)* | **7,6 ms** *(média / avg)* | `0` erros de lock / `0` erros de sintaxe |
-| **Ingestão 2 Passagens (500.000 itens M3U)** *(2-Pass Disk Scan + Import)* | Pico **165,2 MB** RAM *(base 81 MB)* | Sem OOM na jaula de 256 MB |
+| **Home Completa em 200.000+ itens** *(Full Home Load @ 200k+ items)* | **21,8 ms** *(média / avg)* • **24,8 ms** *(máx)* | Carregamento paralelo + índices compostos Room |
+| **Busca Instantânea FTS5** *(50 queries @ 100k+ items)* | **7,0 ms** *(média / avg)* | `0` erros de lock / `0` erros de sintaxe |
+| **Ingestão 2 Passagens (500.000 itens M3U)** *(2-Pass Disk Scan + Import)* | Pico **142,6 MB** RAM *(base 81 MB)* | Sem OOM na jaula de 256 MB |
 | **Ingestão Extrema (2.000.000 itens)** *(2M M3U & Xtream Streaming)* | **100% estável** em streaming O(1) | Lotes fixos de `3.000` itens |
-| **Backup JSON de 10.000 registros** *(5k favoritos + 5k histórico)* | Export **174 ms** • Import **198 ms** | Mesclagem em lote único (zero N+1) |
+| **Backup JSON de 10.000 registros** *(5k favoritos + 5k histórico)* | Export **200 ms** • Import **176 ms** | Mesclagem em lote único (zero N+1) |
 | **Controle Parental (Home + FTS5)** *(200k+ items)* | **0 vazamentos** *(zero leaks)* | Bloqueio validado em todas as queries |
-| **Tamanho do APK Release (R8)** *(Minified & Shrunk)* | **~11,3 MB** | Leve, nativo e sem dependências pesadas |
+| **Tamanho do APK Release (R8)** *(Minified & Shrunk)* | **11,3 MB** | Leve, nativo e sem dependências pesadas |
 
 ---
 
 <a id="-download--instalação"></a>
 ## ⬇️ Download & Instalação / Download & Installation
 
-> **📢 Status:** O primeiro release público está sendo preparado para a aba [**GitHub Releases**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases). Dê uma ⭐ **Star** e clique em **Watch → Releases only** no topo desta página para ser avisado assim que o APK oficial for publicado!  
-> *The first public APK release is coming soon to [**GitHub Releases**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases). ⭐ **Star** and **Watch → Releases** to get notified immediately!*
+<div align="center">
+
+[![Download NoxisTV v1.3.0 APK](https://img.shields.io/badge/⬇️%20Download%20NoxisTV-v1.3.0%20APK%20(11.3%20MB)-10B981?style=for-the-badge)](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases/latest)
+
+</div>
+
+> **✅ Versão Atual / Latest Stable Release:** [**v1.3.0**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases/latest) — APK assinado (Release R8, `11,3 MB`) com checksum `SHA-256` verificável disponível na aba [**GitHub Releases**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases/latest).
 
 ### Como instalar o APK no Android / How to Install on Android
-1. Acesse a aba [**Releases**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases) e baixe o arquivo `NoxisTV-vX.X.X-release.apk` mais recente.
-2. *(Opcional / Recomendado)* Confira a integridade do arquivo comparando o hash **SHA-256** publicado na nota da versão.
+1. Acesse [**GitHub Releases (v1.3.0)**](https://github.com/jonasmartinsilvina-netizen/NoxisTV/releases/latest) e baixe o arquivo **`NoxisTV-v1.3.0-release.apk`**.
+2. *(Opcional / Recomendado)* Confira a integridade do arquivo comparando o hash **`SHA-256`** publicado no arquivo `NoxisTV-v1.3.0-release.apk.sha256`.
 3. Toque no APK baixado e permita **"Instalar apps desconhecidos"** para o seu navegador/gerenciador de arquivos.
 4. Abra o **NoxisTV**, toque em **`+`** e adicione sua lista **M3U / M3U8** (URL ou arquivo local) ou conta **Xtream Codes API**.
 
